@@ -17,3 +17,23 @@ table {
 td {
     padding: 5px;
 }
+
+#changeColors {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.changeMyColorBut {
+    
+    width: 100px;
+    height: 100px;
+}
+
+.changeMyColorSp {
+    color: white;
+    border: solid 3px white;
+    padding: 10px;
+    margin: 10px 500px;
+}

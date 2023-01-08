@@ -41,3 +41,28 @@ const focus = document.querySelector('#focus');
     //blur -- when the element lost focused;
     focus.addEventListener('blur', bluring);
 
+// **************************************************************************************
+//you can use 'this', to refer to the element of the addEventListener;
+
+
+const allButs = document.querySelectorAll('.changeMyColorBut')
+const allSpans = document.querySelectorAll('.changeMyColorSp')
+
+function randColor() {
+   const numb1 = Math.floor(Math.random() * 256);
+   const numb2 = Math.floor(Math.random() * 256);
+   const numb3 = Math.floor(Math.random() * 256);
+   return `rgb(${numb1},${numb2},${numb3})`;
+}
+function coloring() {
+   this.style.color = randColor();
+   this.style.backgroundColor = randColor();
+}
+
+for(let button of allButs) {
+   button.addEventListener('click', coloring)
+}
+
+for(let span of allSpans) {
+   span.addEventListener('click', coloring)
+}
