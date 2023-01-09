@@ -66,3 +66,42 @@ for(let button of allButs) {
 for(let span of allSpans) {
    span.addEventListener('click', coloring)
 }
+
+// **************************************************************************************
+const input = document.querySelector('#keyUpDown');
+let oldColor = '';
+let lastColor = '';
+const body = document.querySelector('body');
+
+function randBackColor() {
+   const numb1 = Math.floor(Math.random() * 256);
+   const numb2 = Math.floor(Math.random() * 256);
+   const numb3 = Math.floor(Math.random() * 256);
+   lastColor = `rgb(${numb1},${numb2},${numb3})`;
+   return `rgb(${numb1},${numb2},${numb3})`;
+}
+
+function lastBackColor() {
+   oldColor = lastColor;
+   randBackColor();
+}
+
+input.addEventListener('keydown', function(evt) {
+   if (evt.keyCode === 38) {
+   lastBackColor();
+   input.style.backgroundColor = lastColor;
+   console.log('key up');
+   }
+   if (evt.keyCode === 40) {
+   input.style.backgroundColor = oldColor;
+   console.log('key down');
+   }
+})
+window.addEventListener('keydown', function(evt){
+   if (evt.code === 'ArrowRight') {
+      body.style.backgroundColor = randColor();
+   }
+   if (evt.code === 'ArrowLeft') {
+      body.style.backgroundColor = 'black';
+   }
+})

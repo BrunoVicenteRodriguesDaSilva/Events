@@ -37,3 +37,8 @@ td {
     padding: 10px;
     margin: 10px 500px;
 }
+#inputChangeBack {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
